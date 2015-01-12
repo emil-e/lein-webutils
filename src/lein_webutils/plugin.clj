@@ -88,4 +88,4 @@
   (add-hook #'leiningen.ring.server/server #'watch-hook))
 
 (defn middleware [project]
-  (update-in project [:resource-paths] conj (resource-dir project)))
+  (update-in project [:resource-paths] conj (-> project resource-dir str)))
